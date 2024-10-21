@@ -52,33 +52,6 @@ class UserLoginView(generics.GenericAPIView):
             return Response({'token': token.key})
         return Response({'error': 'Invalid Credentials'}, status=status.HTTP_400_BAD_REQUEST)
     
-# class RegisterView(generics.CreateAPIView):
-#     serializer_class = RegisterSerializer
-
-#     def create(self, request, args, **kwargs):
-#         serializer = self.get_serializer(data=request.user)
-#         serializer.is_valid(raise_exception=True)
-#         user = serializer.save()
-#         refresh = RefreshToken.for_user(user)
-#         return Response({
-#             'user': serializer.data,
-#             'refresh': str(refresh),
-#             'access': str(refresh.access_token),
-#         })
-    
-# class LoginView(generics.CreateAPIView):
-#     serializer_class = LoginSerializer
-
-#     def create(self, request, *args, **kwargs):
-#         serializer = self.get_serializer(data=request.data)
-#         serializer.is_valid(raise_exception=True)
-#         user = serializer.validated_data['user']
-#         refresh = RefreshToken.for_user(user)
-#         return Response({
-#             'refresh': str(refresh),
-#             'access': str(refresh.access_token),
-#         })
-    
 class LogoutView(APIView):
     permission_classes = [permissions.IsAuthenticated]
 

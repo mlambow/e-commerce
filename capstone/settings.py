@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-#jbu9f)-&q0end!q4l%9l_cjme0-hruq+f0akbdgqt4k!@k9g0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["mlambow.pythonanywhere.com"]
+ALLOWED_HOSTS = []
 
 #AUTH_USER_MODEL = 'users.User'
 
@@ -85,15 +85,10 @@ WSGI_APPLICATION = 'capstone.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'capstone_db',
-        'USER': 'admin',
-        'PASSWORD': 'Coldbeer',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 
 # Password validation
