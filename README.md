@@ -12,7 +12,7 @@ Pagination: Efficiently handle large datasets with pagination.
 Technologies Used
 Django
 Django Rest Framework
-PostgreSQL (or your preferred database)
+SQL database
 JSON Web Tokens (JWT) for authentication
 
 Installation
